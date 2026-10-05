@@ -16,9 +16,17 @@ export class ProductsService {
     };
   }
 
-  async findAll() {
-    return this.productsRepository.findAll();
-  }
+  async findAll(
+  name?: string,
+  minPrice?: string,
+  maxPrice?: string,
+) {
+  return this.productsRepository.findAll(
+    name,
+    minPrice,
+    maxPrice,
+  );
+}
 
   async findOne(id: string) {
     const product = await this.productsRepository.findOne(id);

@@ -10,7 +10,7 @@ export class ProductsRepository {
     private readonly productModel: Model<Product>,
   ) {}
 
-  async findAll() {
+  async findAll(name?: string, minPrice?: string, maxPrice?: string) {
     return this.productModel.find();
   }
   async findOne(id: string) {

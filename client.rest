@@ -1,24 +1,30 @@
 @baseUrl = http://localhost:3001
 
 
+### Todos os produtos
 GET {{baseUrl}}/products
 
+### Por nome
+GET {{baseUrl}}/products?name=Monitor
 
-### Buscar produto por ID
-GET {{baseUrl}}/products/6ac27df7898a29d12d35742e
+### Por preço mínimo
+GET {{baseUrl}}/products?minPrice=500
 
-###
+### Por preço máximo
+GET {{baseUrl}}/products?maxPrice=1500
+
+### Combinando filtros
+GET {{baseUrl}}/products?name=Monitor&minPrice=500&maxPrice=1500
+### Cadastrar produto
 
 POST {{baseUrl}}/products
 Content-Type: application/json
 
 {
-    "name":"computador",
+    "name":"monitor",
     "price":1100,
     "stock":10
 }
-
-###
 
 ### Atualizar produto
 PATCH {{baseUrl}}/products/6ac27df7898a29d12d35742e
@@ -28,7 +34,7 @@ Content-Type: application/json
   "price": 1000
 }
 
-###
+
 
 ### Deletar produto
 DELETE {{baseUrl}}/products/6ac27df7898a29d12d35742e

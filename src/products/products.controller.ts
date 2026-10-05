@@ -18,9 +18,13 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Get()
-  findAll() {
-    return this.productsService.findAll();
-  }
+findAll(
+  @Query('name') name?: string,
+  @Query('minPrice') minPrice?: string,
+  @Query('maxPrice') maxPrice?: string,
+) {
+  return this.productsService.findAll(name, minPrice, maxPrice);
+}
 
   @Get(':id')
   findOne(@Param('id') id: string) {
