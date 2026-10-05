@@ -1,0 +1,34 @@
+@baseUrl = http://localhost:3001
+
+
+GET {{baseUrl}}/products
+
+
+### Buscar produto por ID
+GET {{baseUrl}}/products/6ac27df7898a29d12d35742e
+
+###
+
+POST {{baseUrl}}/products
+Content-Type: application/json
+
+{
+    "name":"computador",
+    "price":1100,
+    "stock":10
+}
+
+###
+
+### Atualizar produto
+PATCH {{baseUrl}}/products/6ac27df7898a29d12d35742e
+Content-Type: application/json
+
+{
+  "price": 1000
+}
+
+###
+
+### Deletar produto
+DELETE {{baseUrl}}/products/6ac27df7898a29d12d35742e
